@@ -1,6 +1,10 @@
 @Authentication_HostAddress = http://localhost:5205
 
-GET {{Authentication_HostAddress}}/weatherforecast/
+### Test without Key (Should fail with 401)
+GET {{Authentication_HostAddress}}/weatherforecast
 Accept: application/json
 
-###
+### Test with Correct Key (Should work)
+GET {{Authentication_HostAddress}}/weatherforecast
+Accept: application/json
+APIKEYNAME: MySecret_123
